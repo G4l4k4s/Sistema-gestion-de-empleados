@@ -41,6 +41,7 @@ namespace TallerParte1.Models
         {
             Empleados.RemoveAll(e => e.Nombre == Nombre && e.Apellido == Apellido);
         }
+        
         public void MostrarTodosLosEmpleados()
         {
             foreach (var empleado in Empleados)

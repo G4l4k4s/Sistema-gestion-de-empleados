@@ -25,14 +25,15 @@ namespace TallerParte1.Models
             Salario = salario;
         }
 
-        private void CalcularBonificaion()
+        private double CalcularBonificaion()
         {
             var Bonificacion = Salario * 0.1;
+            return Bonificacion;
         }
 
         public void MostrarInformacion()
         {
-            Console.WriteLine($"Informacion del empleado\n Id: {Id}\n Nombre: {Nombre}\n Apellido: {Apellido}\n Numero Cc: {NumeroDeIdentificacion}\n Edad: {Edad}\n Cargo: {Posicion}\n Salario: {Salario}");
+            Console.WriteLine($"Informacion del empleado\n Id: {Id}\n Nombre: {Nombre}\n Apellido: {Apellido}\n Numero Cc: {NumeroDeIdentificacion}\n Edad: {Edad}\n Cargo: {Posicion}\n Salario: {CalcularBonificaion()}");
             Console.WriteLine();
         }
     }
