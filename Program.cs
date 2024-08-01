@@ -1,13 +1,13 @@
 ﻿using TallerParte1.Models;
 
 var Empresa = new Empresa("Chilaquiles", "calle 2 #2233");
-var empleado = new Empleado("jose", "zapata", "1152696190", 30, "junnior", 55000000);
+var empleado = new Empleado("jose", "zapata",  30,"1152696190", "junnior", 55000000);
 
-var empleado1 = new Empleado("Juan", "Pérez", "12345678", 30, "Desarrollador", 3500.00);
-var empleado2 = new Empleado("Ana", "García", "87654321", 28, "Diseñadora", 3200.00);
-var empleado3 = new Empleado("Luis", "Martínez", "11223344", 45, "Gerente", 5000.00);
-var empleado4 = new Empleado("María", "Lopez", "44332211", 35, "Analista", 4000.00);
-var empleado5 = new Empleado("Carlos", "Hernández", "55667788", 40, "Consultor", 4500.00);
+var empleado1 = new Empleado("Juan", "Pérez", 30, "12345678", "Desarrollador", 3500.00);
+var empleado2 = new Empleado("Ana", "García",  28,"87654321", "Diseñadora", 3200.00);
+var empleado3 = new Empleado("Luis", "Martínez",  45,"11223344", "Gerente", 5000.00);
+var empleado4 = new Empleado("María", "Lopez",  35,"44332211", "Analista", 4000.00);
+var empleado5 = new Empleado("Carlos", "Hernández",  40,"55667788", "Consultor", 4500.00);
 
 Empresa.Empleados = new List<Empleado> { empleado, empleado1, empleado2, empleado3, empleado4, empleado5 };
 while (true)

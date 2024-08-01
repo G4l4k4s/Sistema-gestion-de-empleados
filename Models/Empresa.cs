@@ -10,6 +10,7 @@ namespace TallerParte1.Models
         public string? Nombre { get; set; }
         public string? Direccion { get; set; }
         public List<Empleado>? Empleados { get; set; }
+        public List<Cliente>? Clientes { get; set; }
 
 
         public Empresa(string nombre, string direccion)
@@ -33,8 +34,8 @@ namespace TallerParte1.Models
             var Cargo = Console.ReadLine();
             Console.WriteLine("ingrese el salario");
             var Salario = Convert.ToDouble(Console.ReadLine());
-            Empleado coder1 = new Empleado(Nombre, Apellido, NumeroCC, Edad, Cargo, Salario);
-            Empleados.Add(coder1);
+            Empleado empleado = new Empleado(Nombre, Apellido, Edad, NumeroCC, Cargo, Salario);
+            Empleados.Add(empleado);
         }
 
         public void EliminarEmpleado(string Nombre, string Apellido)
@@ -109,6 +110,37 @@ namespace TallerParte1.Models
                 }
             }
             Console.ReadKey();
+        }
+
+        public void AgregarCliente()
+        {
+            Console.Clear();
+            Console.WriteLine("ingresa el nombre del cliente");
+            var Nombre = Console.ReadLine();
+            Console.WriteLine("ingresa el Apellido del cliente");
+            var Apellido = Console.ReadLine();
+            Console.WriteLine("ingrese el edad del cliente");
+            var Edad = Convert.ToByte(Console.ReadLine());
+            Console.WriteLine("ingrese el email del cliente");
+            var email = Console.ReadLine();
+            Console.WriteLine("ingrese el telefono del cliente");
+            var telefono = Console.ReadLine();
+            Cliente cliente = new Cliente(Nombre, Apellido, Edad, email, telefono);
+            Clientes.Add(cliente);
+
+        }
+
+        public void MostrarTodosLosClientes()
+        {
+            foreach (var item in Clientes)
+            {
+                ;
+            }
+        }
+
+        public void EliminarCliente()
+        {
+
         }
     }
 }
