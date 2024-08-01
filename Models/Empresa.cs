@@ -42,7 +42,7 @@ namespace TallerParte1.Models
         {
             Empleados.RemoveAll(e => e.Nombre == Nombre && e.Apellido == Apellido);
         }
-        
+
         public void MostrarTodosLosEmpleados()
         {
             foreach (var empleado in Empleados)
@@ -76,7 +76,7 @@ namespace TallerParte1.Models
                     item.Posicion = newPosicion;
                     Console.WriteLine("nuevo salario");
                     double newSalario = Convert.ToDouble(Console.ReadLine());
-                    item.Salario = newSalario;                   
+                    item.Salario = newSalario;
                     Console.WriteLine("datos actualizador con exito!");
                     Console.ReadKey();
                     break;
@@ -104,9 +104,10 @@ namespace TallerParte1.Models
             var cargo = Console.ReadLine();
             foreach (var item in Empleados)
             {
-                if (item.Posicion == cargo) 
+                if (item.Posicion == cargo)
                 {
                     item.MostrarInformacion();
+                    Console.WriteLine();
                 }
             }
             Console.ReadKey();
@@ -122,25 +123,33 @@ namespace TallerParte1.Models
             Console.WriteLine("ingrese el edad del cliente");
             var Edad = Convert.ToByte(Console.ReadLine());
             Console.WriteLine("ingrese el email del cliente");
-            var email = Console.ReadLine();
+            var Email = Console.ReadLine();
             Console.WriteLine("ingrese el telefono del cliente");
-            var telefono = Console.ReadLine();
-            Cliente cliente = new Cliente(Nombre, Apellido, Edad, email, telefono);
-            Clientes.Add(cliente);
-
+            var Telefono = Console.ReadLine();
+            Cliente cliente1 = new Cliente(Nombre, Apellido, Edad, Email, Telefono);
+            Clientes.Add(cliente1);
         }
 
         public void MostrarTodosLosClientes()
         {
             foreach (var item in Clientes)
             {
-                ;
+                item.MostrarInformacion();
+                Console.WriteLine();
+
             }
+            
+            Console.ReadKey();
         }
 
         public void EliminarCliente()
         {
-
+            Console.WriteLine("ingrese el nombre del cliente");
+            var Nombre = Console.ReadLine();
+            Console.WriteLine("ingrese el apellido del cliente");
+            var Apellido = Console.ReadLine();
+            Clientes.RemoveAll(c => c.Nombre == Nombre && c.Apellido == Apellido);
         }
+
     }
 }

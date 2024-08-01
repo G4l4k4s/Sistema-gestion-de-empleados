@@ -9,7 +9,14 @@ var empleado3 = new Empleado("Luis", "Martínez",  45,"11223344", "Gerente", 500
 var empleado4 = new Empleado("María", "Lopez",  35,"44332211", "Analista", 4000.00);
 var empleado5 = new Empleado("Carlos", "Hernández",  40,"55667788", "Consultor", 4500.00);
 
+Cliente cliente1 = new Cliente("Juan", "Pérez", 30, "juan.perez@example.com", "123-456-7890");
+Cliente cliente2 = new Cliente("María", "García", 23, "maria.garcia@example.com", "123-456-7891");
+Cliente cliente3 = new Cliente("Elena", "Ramírez", 23, "elena.ramirez@example.com", "123-456-7899");
+
 Empresa.Empleados = new List<Empleado> { empleado, empleado1, empleado2, empleado3, empleado4, empleado5 };
+Empresa.Clientes = new List<Cliente> { cliente1, cliente2, cliente3 };
+
+Console.WriteLine("Bienvenido a la empresa Chilaquiles");
 while (true)
 {
 
@@ -22,6 +29,9 @@ while (true)
     Console.WriteLine("4. Actualizar empleado");
     Console.WriteLine("5. Buscar empleado por CC");
     Console.WriteLine("6. Mostrar empleados por cargo");
+    Console.WriteLine("7. Agregar cliente");
+    Console.WriteLine("8. Mostrar todos los cliente");
+    Console.WriteLine("9. Eliminar clientes");
 
     var opcion = Console.ReadLine();
 
@@ -50,6 +60,23 @@ while (true)
         case "6":
             Empresa.MostrarEmpleadosPorCargo();
             break;
+        case "7":
+            Empresa.AgregarCliente();
+            break;
+        case "8":
+            Empresa.MostrarTodosLosClientes();
+            break;
+        case "9":
+            Empresa.EliminarCliente();
+            break;
+
+        default:
+        Console.WriteLine("Opcion no valida");
+        Console.ReadKey();
+        break;
+
+
+        
     }
 }
 
