@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace TallerParte1.Models
 {
-    public class Persona
+    public abstract class Persona
     {
         public string? Nombre { get; set; }
         public string? Apellido { get; set; }
@@ -18,11 +18,6 @@ namespace TallerParte1.Models
             Edad = edad;
         }
 
-        public virtual void MostrarInformacion()
-        {
-            Console.WriteLine($"Informacion de la persona\n Nombre Completo: {Nombre} {Apellido}\n Edad: {Edad}");
-        }
-
-        
+        public abstract void MostrarInformacion();        
     }
 }
