@@ -7,17 +7,22 @@ namespace TallerParte1.Models
 {
     public abstract class Persona
     {
-        public string? Nombre { get; set; }
-        public string? Apellido { get; set; }
-        public int Edad { get; set; }
+        protected Guid Id { get; set; }
+        protected string? Nombre { get; set; }
+        protected string? Apellido { get; set; }
+        protected int Edad { get; set; }
 
-        public Persona(string nombre, string apellido, int edad)
+        protected Persona(string nombre, string apellido, int edad)
         {
+            Id = Guid.NewGuid();
             Nombre = nombre;
             Apellido = apellido;
             Edad = edad;
         }
 
-        public abstract void MostrarInformacion();        
+        public abstract void MostrarInformacion();
+
+
+
     }
 }

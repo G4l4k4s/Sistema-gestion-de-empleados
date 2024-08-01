@@ -26,21 +26,21 @@ namespace TallerParte1.Models
             var Nombre = Console.ReadLine();
             Console.WriteLine("ingresa el Apellido");
             var Apellido = Console.ReadLine();
-            Console.WriteLine("ingrese el numero de documento");
-            var NumeroCC = Console.ReadLine();
             Console.WriteLine("ingrese el edad");
             var Edad = Convert.ToByte(Console.ReadLine());
+            Console.WriteLine("ingrese el numero de documento");
+            var NumeroCC = Console.ReadLine();
             Console.WriteLine("ingrese el cargo");
             var Cargo = Console.ReadLine();
             Console.WriteLine("ingrese el salario");
             var Salario = Convert.ToDouble(Console.ReadLine());
-            Empleado empleado = new Empleado(Nombre, Apellido, Edad, NumeroCC, Cargo, Salario);
+            var empleado = new Empleado(Nombre, Apellido,  Edad, NumeroCC, Cargo, Salario);
             Empleados.Add(empleado);
         }
 
         public void EliminarEmpleado(string Nombre, string Apellido)
         {
-            Empleados.RemoveAll(e => e.Nombre == Nombre && e.Apellido == Apellido);
+            Empleados.RemoveAll(e => e.TomarNombre() == Nombre && e.TomarApellido() == Apellido);
         }
 
         public void MostrarTodosLosEmpleados()
@@ -59,27 +59,28 @@ namespace TallerParte1.Models
             {
                 if (item.NumeroDeIdentificacion == IdCoder)
                 {
-                    Console.WriteLine("nuevo nombre del coder");
-                    string? newNombre = Console.ReadLine();
-                    item.Nombre = newNombre;
-                    Console.WriteLine("nuevo apellido del coder");
-                    string? newApellido = Console.ReadLine();
-                    item.Apellido = newApellido;
-                    Console.WriteLine("nuevo numero del documento del coder");
-                    string? newEmail = Console.ReadLine();
-                    item.NumeroDeIdentificacion = newEmail;
-                    Console.WriteLine("nueva edad del empleado");
-                    byte newTelefono = Convert.ToByte(Console.ReadLine());
-                    item.Edad = newTelefono;
-                    Console.WriteLine("nuevo nombre del coder");
-                    string? newPosicion = Console.ReadLine();
-                    item.Posicion = newPosicion;
-                    Console.WriteLine("nuevo salario");
-                    double newSalario = Convert.ToDouble(Console.ReadLine());
-                    item.Salario = newSalario;
-                    Console.WriteLine("datos actualizador con exito!");
-                    Console.ReadKey();
-                    break;
+                    Console.WriteLine("Empleado a mdoficar ");
+                    item.MostrarInformacion();
+                    // Empleados.RemoveAll(c => c.NumeroDeIdentificacion == IdCoder)
+                    Console.WriteLine("ingrese el nombre del empleado");
+                    var nombre = Console.ReadLine();
+                    Console.WriteLine("ingresa el Apellido");
+                    var apellido = Console.ReadLine();
+                    Console.WriteLine("ingrese el edad");
+                    var edad = Convert.ToInt16(Console.ReadLine());
+                    Console.WriteLine("ingrese el numero de documento");
+                    var numeroCC = Console.ReadLine();
+                    Console.WriteLine("ingrese el cargo");
+                    var cargo = Console.ReadLine();
+                    Console.WriteLine("ingrese el salario");
+                    var salario = Convert.ToDouble(Console.ReadLine());
+                    item.SetNombre(nombre);
+                    item.SetApellido(apellido);
+                    item.SetEdad(edad);
+                    item.NumeroDeIdentificacion = numeroCC;
+                    item.Posicion = cargo;
+                    item.Salario = salario;
+                    Console.WriteLine("Empleado modificado correctamentee");
                 }
             }
         }
@@ -148,7 +149,7 @@ namespace TallerParte1.Models
             var Nombre = Console.ReadLine();
             Console.WriteLine("ingrese el apellido del cliente");
             var Apellido = Console.ReadLine();
-            Clientes.RemoveAll(c => c.Nombre == Nombre && c.Apellido == Apellido);
+            Clientes.RemoveAll(c => c.TomarNombre() == Nombre && c.TomarApellido() == Apellido);
         }
 
     }
