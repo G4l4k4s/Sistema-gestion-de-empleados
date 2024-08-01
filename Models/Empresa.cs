@@ -38,9 +38,12 @@ namespace TallerParte1.Models
             Empleados.Add(empleado);
         }
 
-        public void EliminarEmpleado(string Nombre, string Apellido)
+        public void EliminarEmpleado()
         {
-            Empleados.RemoveAll(e => e.TomarNombre() == Nombre && e.TomarApellido() == Apellido);
+            Console.WriteLine("Eliminar empleado");
+            Console.WriteLine("ingrese numero de documento");
+            var IdCoder = Console.ReadLine();
+            Empleados.RemoveAll(e => e.NumeroDeIdentificacion == IdCoder);
         }
 
         public void MostrarTodosLosEmpleados()
@@ -149,7 +152,7 @@ namespace TallerParte1.Models
             var Nombre = Console.ReadLine();
             Console.WriteLine("ingrese el apellido del cliente");
             var Apellido = Console.ReadLine();
-            Clientes.RemoveAll(c => c.TomarNombre() == Nombre && c.TomarApellido() == Apellido);
+            Clientes.RemoveAll(c => c.GetNombre() == Nombre && c.GetApellido() == Apellido);
         }
 
     }

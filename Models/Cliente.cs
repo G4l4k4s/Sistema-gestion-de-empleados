@@ -20,5 +20,24 @@ namespace TallerParte1.Models
         {
             Console.WriteLine($"Informacion del cliente\n Nombre Completo: {Nombre} {Apellido}\n Edad: {Edad}\n Email: {Email}\n Telefono: {Telefono}");
         }
+
+        public string GetNombre()
+        {
+            return Nombre;            
+        }
+        public void SetNombre(string nombre)
+        {
+            Nombre = nombre;
+        }
+
+        public string GetApellido()
+        {
+            return Apellido;
+        }
+
+        public void SetApellido(string apellido)
+        {
+            Apellido = apellido;
+        }
     }
 }
